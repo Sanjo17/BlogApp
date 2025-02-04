@@ -8,13 +8,13 @@ import { BlogForm } from "./BlogForm";
 
 export const Card = ({ data }) => {
   const [editMode, setEditMode] = useState(false);
+  const [isDash, setDash] = useState(false);
   const { blogList, setBlogList } = useContext(BlogContext);
   const location = useLocation();
-  const [isDash, setDash] = useState(false);
   useEffect(() => {
     if (location.pathname === "/dashboard") {
       setDash(!isDash);
-    }
+    } 
   }, []);
 
   const navigate = useNavigate();
@@ -32,7 +32,7 @@ export const Card = ({ data }) => {
       <div className="card  p-1 w-sm h-60 border rounded-sm shadow-md overflow-hidden hover:shadow-lg transition bg-blue-100 flex flex-col justify-between">
         <div
           className="card-details"
-          onClick={() => navigate(`/postdetails/${data.id}`)}
+          onClick={() => navigate(`/postdetails/${data.id}/${isDash}`)}
         >
           <h2 className="blog-title text-xl font-semibold text-gray-900 break-words line-clamp-2 ">
             {data.title}
