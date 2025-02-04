@@ -1,0 +1,107 @@
+.login-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.664)  ;
+    min-width: 20%;
+    border-radius: 5px;
+    width: 25%;
+    justify-content: center;
+}
+.logo{
+    position: static;
+    display: flex;
+    justify-content: center;
+}
+.logo img{
+    width: 150px;
+    
+}
+.login h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.login-btn{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 6px;
+    background-color: 	#15ff00d3;
+    
+    border-radius: 2px;
+    border: 1px solid 	#8f672c;
+}
+select{
+    border: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.keep-checkbox{
+    margin-top: 10px;
+    display: flex;
+    align-items: baseline;
+}
+select{
+    color: #146eb4;
+}
+.password-labels{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    
+}
+.forgot{
+    color: #146eb4;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+
+}
+input{
+    margin-bottom: 20px;
+    padding: 5px;
+    border: .5px solid rgba(0, 0, 0, 0.7);
+    border-radius: 3px;
+   
+}
+input:focus { 
+    outline: none !important;
+    border-color: #000000ac;
+    box-shadow: 0 0 10px #66ff00;
+}
+
+label{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: small    ;
+    font-weight: bold;
+    padding: 3px 0px;
+}
+
+
+
+span{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: small;
+    
+}
+
+.create-btn{
+    background-color: rgba(36, 114, 14, 0.522);
+    border: .5px solid gray;
+    padding: 6px    ;
+    border-radius: 2px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+
+}
+.new-label{
+    
+    display: inline;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: small;
+    
+}
