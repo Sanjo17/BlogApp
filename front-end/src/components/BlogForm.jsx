@@ -7,13 +7,14 @@ export const BlogForm = ({
   data = { title: "", content: "" },
   edit,
 }) => {
+  const [editMode] = useState(edit);
+  const { blogList, setBlogList } = useContext(BlogContext);
   useEffect(() => {
     title.current.value = data.title;
     content.current.value = data.content;
   }, []);
 
-  const [editMode] = useState(edit);
-  const { blogList, setBlogList } = useContext(BlogContext);
+  
 
   const handleEdit = () => {
     const updatedBlogData = {
