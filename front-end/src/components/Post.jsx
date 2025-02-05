@@ -24,7 +24,7 @@ export const Post = () => {
         author: "",
       });
     }
-    console.log(postData)
+    console.log(postData);
     setPostData(filteredData[0]);
   }, [blogList]);
   const closeForm = () => {
@@ -55,16 +55,20 @@ export const Post = () => {
       ) : (
         ""
       )}
-      <div className="post   pt-1 px-5 sm:px-5 pt-10 md:px-10 pt-10 lg:px-7  ">
-        <h1 className="blog-post-title text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 text-center">
-          {postData.title}
-        </h1>
-        <cite className="blog-post-author mt-2 text-lg text-gray-600 ">
-          Blog by : {postData.author}
-        </cite>
-        <p className="blog-post-content text-lg my-5">{postData.content}</p>
-        <div className="likes bg-red-100 w-fit">100 likes</div>
-      </div>
+      {postData ? (
+        <div className="post   pt-1 px-5 sm:px-5 pt-10 md:px-10 pt-10 lg:px-7  ">
+          <h1 className="blog-post-title text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 text-center">
+            {postData.title}
+          </h1>
+          <cite className="blog-post-author mt-2 text-lg text-gray-600 ">
+            Blog by : {postData.author}
+          </cite>
+          <p className="blog-post-content text-lg my-5">{postData.content}</p>
+          <div className="likes bg-red-100 w-fit">100 likes</div>
+        </div>
+      ) : (
+        "no data"
+      )}
       {editForm ? (
         <BlogForm data={postData} handleCreate={closeForm} edit={true} />
       ) : (
