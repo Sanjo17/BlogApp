@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useContext, useEffect, useRef, useState } from "react";
 import { BlogContext } from "../context/BlogContext";
+import { AuthContext } from "../context/AuthProvider";
 
 export const BlogForm = ({
   handleCreate,
@@ -9,6 +10,7 @@ export const BlogForm = ({
 }) => {
   const [editMode] = useState(edit);
   const { blogList, setBlogList } = useContext(BlogContext);
+  const { user } = useContext(AuthContext);
   useEffect(() => {
     title.current.value = data.title;
     content.current.value = data.content;
@@ -38,6 +40,7 @@ export const BlogForm = ({
     const nextId = blogList[blogList.length - 1].id + 1;
     const newBlog = {
       id: data.id == null || undefined ? nextId : data.id,
+      author:user?.username||"author",
       title: title.current.value,
       content: content.current.value,
     };

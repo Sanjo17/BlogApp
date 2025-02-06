@@ -15,6 +15,7 @@ export const SearchBar = () => {
   };
 
   const handleReset = () => {
+    setSearch("")
     resetBlog();
     searchRef.current.value = "";
     setCancelBtn(!cancelbtn);

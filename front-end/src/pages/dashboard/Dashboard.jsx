@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BlogForm } from "../../components/BlogForm";
-import { Content } from "../../components/Content";
 import { SearchBar } from "../../components/SearchBar";
+import { Content } from "../../components/Content";
 
 export const Dashboard = () => {
   const [formOpen, setFormOpen] = useState(false);
@@ -12,7 +12,7 @@ export const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <div className="dashboard-box ">
+      <div className="dashboard-box " key={"kk"}>
         <div className="search-box text-center  flex justify-center items-center mt-10">
           <SearchBar />
         </div>
@@ -24,7 +24,11 @@ export const Dashboard = () => {
             + Create
           </button>
         </div>
-        {formOpen ? <BlogForm edit={false} handleCreate={handleCreate} /> : ""}
+        {formOpen ? (
+          <BlogForm edit={false} handleCreate={handleCreate} key={"b"} />
+        ) : (
+          ""
+        )}
         <Content />
       </div>
     </div>
