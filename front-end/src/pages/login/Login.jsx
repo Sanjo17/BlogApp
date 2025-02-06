@@ -1,34 +1,33 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
+import { login } from "../../services/authService";
+import { AuthContext } from "../../context/AuthProvider";
 export const Login = () => {
-  const usernameRef = useRef();
+  const emailRef = useRef();
   const passwordRef = useRef();
   const navigate = useNavigate();
+  const { setIsAuthenticated } = useContext(AuthContext);
 
-  const dbUser = "sanjo";
-  const dbPass = "123";
+  const handleAuth = async () => {
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
 
-  const handleAuth = () => {
-    console.log(passwordRef);
-    console.log(passwordRef.current);
-
-    if (dbUser === usernameRef.current.value) {
-      if (dbPass === passwordRef.current.value) {
-        navigate("/home");
-      } else {
-        console.log("password wrong");
-      }
-    } else {
-      console.log("userr doesnt exit");
+    try {
+      const response = await login({ email, password });
+      console.log(response);
+      setIsAuthenticated(true);
+      navigate("/");
+    } catch (error) {
+      alert(error.response.data.message);
     }
   };
   return (
     <div className="login-box">
       <div className="login">
         <h2>Login</h2>
-        <label htmlFor="username">Email or mobile phone number</label>
-        <input type="text" name="username" id="username" ref={usernameRef} />
+        <label htmlFor="email">Email</label>
+        <input type="email" name="email" id="email" ref={emailRef} />
         <div className="password-labels">
           <label htmlFor="password">Password</label>
           <span className="forgot">Forgot Password</span>

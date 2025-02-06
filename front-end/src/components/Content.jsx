@@ -25,7 +25,7 @@ export const Content = () => {
   return (
     <div className="content flex flex-col mx-10">
       <div className=" flex flex-wrap gap-5 p-16 justify-center">
-        {currentBlogs.length > 0
+        {currentBlogs?.length > 0
           ? currentBlogs.map((post) => {
               return <Card data={post} key={post.id} />;
             })

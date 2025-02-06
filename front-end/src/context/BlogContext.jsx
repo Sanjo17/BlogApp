@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState } from "react";
 
+
 // eslint-disable-next-line react-refresh/only-export-components
 export const BlogContext = createContext();
 
@@ -78,13 +79,21 @@ const data = [
 ];
 export const BlogProvider = ({ children }) => {
   const [blogList, setBlogList] = useState(data);
-
+  // const [userBlogList, setUserBlogList] = useState([]);
+  
   const resetBlog = () => {
     setBlogList(data)
-  }
+  };
 
   return (
-    <BlogContext.Provider value={{ blogList, setBlogList,resetBlog }}>
+    <BlogContext.Provider
+      value={{
+        blogList,
+        setBlogList,
+        resetBlog,
+      
+      }}
+    >
       {children}
     </BlogContext.Provider>
   );
