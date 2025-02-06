@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/blogs"; // Use environment variable for API URL
+const API_URL = "https://blog-app-qpne85a94-sanjo17s-projects.vercel.app/api/blogs"; // Use environment variable for API URL
 
 // Get all blogs
 export const getBlogs = async () => {

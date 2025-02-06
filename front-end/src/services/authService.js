@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { jwtDecode } from "jwt-decode";
-const API_URL = 'http://localhost:5000/api/auth'; // Update with your backend URL
+const API_URL = 'https://blog-app-qpne85a94-sanjo17s-projects.vercel.app/api/auth'; // Update with your backend URL
 
 // Register User
 export const register = async (userData) => {
