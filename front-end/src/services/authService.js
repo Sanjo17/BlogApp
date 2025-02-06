@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { jwtDecode } from "jwt-decode";
+
 const API_URL = ' http://localhost:5000/api/auth';
 
 // Register User
