@@ -8,13 +8,7 @@ const blogRoutes = require('./routes/blogRoute');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const connection_string = process.env.CONNECTION_STRING
-app.use(cors(
-  {
-      // Change this to your React frontend URL for security
-    methods: "GET,POST,PUT,DELETE",
-    allowedHeaders: "Content-Type,Authorization"
-  }
-));
+app.use(cors());
 app.use(express.json());
 
 mongoose.connect(connection_string).then(() => console.log('MongoDB Connected'))
