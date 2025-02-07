@@ -105,13 +105,13 @@ This is a **full-stack blogging platform** built using the **MERN stack** (Mongo
 
 Deployed on **Vercel/Netlify**. You can access the live demo at:
 
-- [Frontend Demo Link](https://your-front-end-link.vercel.app)
+- [Frontend Demo Link](https://blog-app-git-main-sanjo17s-projects.vercel.app)
 
 ### **Backend**
 
 Deployed on a free platform or your local server. The backend is accessible via:
 
-- [Backend API](http://localhost:5000) or the live deployed link.
+- [Backend API](https://blog-app-api-cyan-nu.vercel.app) (Currently facing a CORS issue) or http://localhost:5000  the live deployed link.
 
 ---
 
