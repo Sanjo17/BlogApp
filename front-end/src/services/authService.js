@@ -38,7 +38,16 @@ export const getUserFromToken = (token) => {
     return null;
   }
 };
+export const getProfile = async (token) => {
+  const response = await axios.get(`${API_URL}/profile`,{
+    headers: { Authorization: token },
+  });
+  
+  localStorage.setItem('token', response.data.token);
+  console.log(response.data)
+  return response.data;
 
+};
 
 
 

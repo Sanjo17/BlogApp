@@ -6,7 +6,8 @@ import { MdDelete } from "react-icons/md";
 import { BlogContext } from "../context/BlogContext";
 import { BlogForm } from "./BlogForm";
 
-export const Card = ({ data }) => {
+export const Card = ({ data, sampleData, }) => {
+  // const[child,setChild] = useState("child");
   const [editMode, setEditMode] = useState(false);
   const [isDash, setDash] = useState(false);
   const { blogList, setBlogList } = useContext(BlogContext);
@@ -14,7 +15,8 @@ export const Card = ({ data }) => {
   useEffect(() => {
     if (location.pathname === "/dashboard") {
       setDash(!isDash);
-    } 
+    }
+    // callbackFn(child)
   }, []);
 
   const navigate = useNavigate();
@@ -43,6 +45,9 @@ export const Card = ({ data }) => {
           <p className="blog-content mt-2 text-gray-700 break-words line-clamp-4">
             {data.content}
           </p>
+          <p className="blog-content mt-2 text-gray-700 break-words line-clamp-4">
+            {sampleData}
+          </p>
           <span>read more...</span>
         </div>
         {isDash ? (
@@ -54,7 +59,11 @@ export const Card = ({ data }) => {
           ""
         )}
       </div>
-      {editMode ? <BlogForm edit={true} handleCreate={closeForm} data={data} /> : ""}
+      {editMode ? (
+        <BlogForm edit={true} handleCreate={closeForm} data={data} />
+      ) : (
+        ""
+      )}
     </>
   );
 };

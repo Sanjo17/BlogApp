@@ -8,13 +8,7 @@ const blogRoutes = require('./routes/blogRoute');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const connection_string = process.env.CONNECTION_STRING
-app.use(cors(
-  {
-    origin:["*"], 
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
-}
-));
+app.use(cors());
 
 app.use(express.json());
 
@@ -27,6 +21,7 @@ app.get('/',(req,res)=>{
       'User Authentication': {
         signup: 'POST /api/auth/signup',
         login: 'POST /api/auth/login',
+        profile:'GET /api/auth/profile'
       },}})
 })
 app.use('/api/auth',authRoutes);

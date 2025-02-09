@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
-import { getToken, logout } from "../services/authService";
-import axios from "axios";
+import { getProfile, getToken, logout } from "../services/authService";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const AuthContext = createContext();
@@ -22,10 +21,8 @@ export const AuthProvider = ({ children }) => {
   }, [isAuthenticated]);
   const fetchUserData = async (token) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/auth/profile`, {
-        headers: { Authorization: token },
-      });
-      setUser(res.data)
+      const data = getProfile(token)
+      setUser(data)
     } catch (error) {
       console.error("Error fetching user:", error);
     }
