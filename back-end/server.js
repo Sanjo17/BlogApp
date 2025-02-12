@@ -8,7 +8,13 @@ const blogRoutes = require('./routes/blogRoute');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const connection_string = process.env.CONNECTION_STRING
-app.use(cors());
+app.use(cors(
+  {
+  origin: '*',  // Allow requests from any origin
+  methods: 'GET,POST,PUT,DELETE,OPTIONS',
+  allowedHeaders: '*'
+}
+));
 
 app.use(express.json());
 
