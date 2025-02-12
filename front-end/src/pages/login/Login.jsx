@@ -29,7 +29,7 @@ export const Login = () => {
   };
   return (
     <div className="login-box">
-      <div className="login">
+      <div className="login w-50 sm:w-sm lg:w-lg md:w-md">
         <h2>Login</h2>
         <label htmlFor="email">Email</label>
         <input type="email" name="email" id="email" ref={emailRef} />
